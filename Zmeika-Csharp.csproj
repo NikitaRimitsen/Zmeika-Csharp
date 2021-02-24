@@ -50,12 +50,18 @@
     <Compile Include="Point.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Score.cs" />
     <Compile Include="Snake.cs" />
     <Compile Include="VerticalLine.cs" />
     <Compile Include="Walls.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="81cebf7e45fdef7.mp3" />
+    <Content Include="e285e54b799801b.mp3" />
+    <Content Include="z_uko_ye-effekty-hrust-kartofelnyh-chipso_-1.mp3" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -11,24 +11,28 @@ namespace Zmeika_Csharp
         public int x;
         public int y;
         public char sym;
+        public ConsoleColor color;
 
         public Point()
         {
         }
 
 
-        public Point(int _x, int _y, char _sym)
+        public Point(int _x, int _y, char _sym, ConsoleColor color_)
         {
             x = _x;
             y = _y;
             sym = _sym;
+            color = color_;
+
         }
 
-        public Point(Point p)
+        public Point(Point p, ConsoleColor color_)
         {
             x = p.x;
             y = p.y;
             sym = p.sym;
+            color = color_;
         }
 
         public void Move(int offset, Direction direction)
@@ -59,6 +63,7 @@ namespace Zmeika_Csharp
         public void Draw()
         {
             Console.SetCursorPosition(x, y);// выводит на экран(кординаты x1 и y1)(выводит точку на экране)
+            Console.ForegroundColor = color;
             Console.Write(sym);
         }
 

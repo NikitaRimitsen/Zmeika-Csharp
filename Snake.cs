@@ -16,7 +16,7 @@ namespace Zmeika_Csharp
 			pList = new List<Point>();
 			for (int i = 0; i < length; i++)
 			{
-				Point p = new Point(tail);
+				Point p = new Point(tail, ConsoleColor.Red);
 				p.Move(i, direction);
 				pList.Add(p);
 			}
@@ -36,13 +36,14 @@ namespace Zmeika_Csharp
 		public Point GetNextPoint()
 		{
 			Point head = pList.Last();
-			Point nextPoint = new Point(head);
+			Point nextPoint = new Point(head, ConsoleColor.Red);
 			nextPoint.Move(1, direction);
 			return nextPoint;
 		}
 
 		public bool IsHitTail()
 		{
+
 			var head = pList.Last();
 			for (int i = 0; i < pList.Count - 2; i++)
 			{
@@ -78,5 +79,5 @@ namespace Zmeika_Csharp
 		}
 
 
-    }
+	}
 }
