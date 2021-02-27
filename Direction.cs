@@ -11,6 +11,7 @@ namespace Zmeika_Csharp
         LEFT,
         RIGHT,
         UP,
-        DOWN
+        DOWN,
+        PAUSE
     }
 }

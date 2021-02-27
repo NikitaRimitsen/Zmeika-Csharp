@@ -12,21 +12,16 @@ namespace Zmeika_Csharp
         public int y;
         public char sym;
         public ConsoleColor color;
-
         public Point()
         {
         }
-
-
-        public Point(int _x, int _y, char _sym, ConsoleColor color_)
+        public Point(int x_, int y_, char sym_, ConsoleColor color_)
         {
-            x = _x;
-            y = _y;
-            sym = _sym;
+            x = x_;
+            y = y_;
+            sym = sym_;
             color = color_;
-
         }
-
         public Point(Point p, ConsoleColor color_)
         {
             x = p.x;
@@ -34,7 +29,6 @@ namespace Zmeika_Csharp
             sym = p.sym;
             color = color_;
         }
-
         public void Move(int offset, Direction direction)
         {
             if (direction == Direction.RIGHT)
@@ -53,18 +47,11 @@ namespace Zmeika_Csharp
             {
                 y = y + offset;
             }
-        }
+            else if (direction == Direction.PAUSE)
+            {
 
-        public bool IsHit(Point p)
-        {
-            return p.x == this.x && p.y == this.y;
-        }
+            }
 
-        public void Draw()
-        {
-            Console.SetCursorPosition(x, y);// выводит на экран(кординаты x1 и y1)(выводит точку на экране)
-            Console.ForegroundColor = color;
-            Console.Write(sym);
         }
 
         public void Clear()
@@ -73,9 +60,20 @@ namespace Zmeika_Csharp
             Draw();
         }
 
+        public void Draw()
+        {
+            Console.SetCursorPosition(x, y);
+            Console.ForegroundColor = color;
+            Console.Write(sym);
+        }
         public override string ToString()
         {
-            return x + ", " + y + ", " + sym;
+            return x + "," + y + "," + sym;
+        }
+
+        internal bool IsHit(Point p)
+        {
+            return p.x == this.x && p.y == this.y;
         }
 
     }
