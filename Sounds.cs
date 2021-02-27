@@ -36,5 +36,22 @@ namespace Zmeika_Csharp
             player.settings.volume = 100;
             player.controls.play();
         }
+        static void Maini(string[] args)
+        {
+            Start start = new Start();
+            if (start.choice() == 3)
+            {
+                Program prog = new Program();
+                prog.game_draw();
+            }
+            else
+            {
+                start.Game_stop();
+            }
+
+
+            Console.ReadLine();
+
+        }
     }
 }

@@ -36,6 +36,8 @@ namespace Zmeika_Csharp
             Console.WriteLine("Score:" + score.ToString());
             Console.SetCursorPosition(90, 11);
             Console.WriteLine("Level:" + level.ToString());
+            Console.SetCursorPosition(90, 15);
+            Console.WriteLine("Esc-Pause");
         }
     }
 }

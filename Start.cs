@@ -15,8 +15,16 @@ namespace Zmeika_Csharp
         int valik = 0;
         public int choice()
         {
-
-            Console.WriteLine("Start game - S\n-------------\nStop game - Q");
+            Console.SetCursorPosition(50, 10);
+            Console.WriteLine("Start game - S");
+            Console.SetCursorPosition(49, 11);
+            Console.WriteLine("________________");
+            Console.SetCursorPosition(50, 13);
+            Console.WriteLine("Stop game - Q");
+            Console.SetCursorPosition(49, 14);
+            Console.WriteLine("________________");
+            Console.SetCursorPosition(50, 16);
+            Console.WriteLine("Sounds=0% - A");
             key = Console.ReadKey(true);
             if (key.Key == ConsoleKey.S)
             {
@@ -25,6 +33,10 @@ namespace Zmeika_Csharp
             else if (key.Key == ConsoleKey.Q)
             {
                 valik = 2;
+            }
+            else if (key.Key == ConsoleKey.A)
+            {
+                valik = 3;
             }
             return valik;
         }

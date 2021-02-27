@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Zmeika_Csharp
 {
-    class FoodCreator
+    class Stenka
     {
         private int mapWidht;
         private int mapHeight;
@@ -14,7 +14,7 @@ namespace Zmeika_Csharp
 
         Random random = new Random();
 
-        public FoodCreator(int mapWidth, int mapHeight, char sym, ConsoleColor color_)
+        public Stenka(int mapWidth, int mapHeight, char sym, ConsoleColor color_)
         {
             this.mapWidht = mapWidth;
             this.mapHeight = mapHeight;
@@ -22,16 +22,12 @@ namespace Zmeika_Csharp
             color_ = color_;
 
         }
-  
 
-
-        public Point CreateFood()
+        public Point CreateStenka()
         {
             int x = random.Next(2, mapWidht - 2);
             int y = random.Next(2, mapHeight - 2);
-            return new Point(x, y, sym, ConsoleColor.Green);
+            return new Point(x, y, sym, ConsoleColor.White);
         }
-
-        
     }
 }

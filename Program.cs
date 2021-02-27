@@ -22,10 +22,12 @@ namespace Zmeika_Csharp
             snake.Draw();
 
             FoodCreator foodCreator = new FoodCreator(80, 25, '@', ConsoleColor.Green);
+            Stenka stenka = new Stenka(80, 25, '+', ConsoleColor.White);
             Point food = foodCreator.CreateFood();
+            Point stenk = stenka.CreateStenka();
             food.Draw();
             Score score = new Score(0, 1);//score=0, level=1
-            score.speed = 400;
+            score.speed = 200;
             score.ScoreWrite();
             Parametrs settings = new Parametrs();
             Sounds sound = new Sounds(settings.GetResourceFolder());
@@ -43,6 +45,10 @@ namespace Zmeika_Csharp
                     if (score.ScoreUp())
                     {
                         score.speed -= 20;
+                        for (int i = 0; i < 2; i++)
+                        {
+                            stenk.Draw();
+                        }
                     }
                 }
                 else

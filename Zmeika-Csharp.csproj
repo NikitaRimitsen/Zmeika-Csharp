@@ -62,6 +62,7 @@
     <Compile Include="Snake.cs" />
     <Compile Include="Sounds.cs" />
     <Compile Include="Start.cs" />
+    <Compile Include="Stenka.cs" />
     <Compile Include="VerticalLine.cs" />
     <Compile Include="Walls.cs" />
   </ItemGroup>
