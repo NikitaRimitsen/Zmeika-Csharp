@@ -20,7 +20,7 @@ namespace Zmeika_Csharp
 
         public void Play(string sound)
         {
-            player.URL = pathToMedia + ("game.mp3");
+            player.URL = pathToMedia + sound;// "stardust.mp3";
             player.settings.volume = 30;
             player.controls.play();
             player.settings.setMode("loop", true);
@@ -33,7 +33,7 @@ namespace Zmeika_Csharp
         public void PlayEat()
         {
             player.URL = pathToMedia + "eda.mp3";
-            player.settings.volume = 40;
+            player.settings.volume = 100;
             player.controls.play();
         }
     }

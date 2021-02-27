@@ -21,15 +21,16 @@ namespace Zmeika_Csharp
             Snake snake = new Snake(p, 4, Direction.RIGHT);
             snake.Draw();
 
-            FoodCreator foodCreator = new FoodCreator(80, 25, '$', ConsoleColor.Green);
+            FoodCreator foodCreator = new FoodCreator(80, 25, '@', ConsoleColor.Green);
             Point food = foodCreator.CreateFood();
             food.Draw();
             Score score = new Score(0, 1);//score=0, level=1
             score.speed = 400;
             score.ScoreWrite();
-            /*Parametrs settings = new Parametrs();
-            Sounds sound = new Sounds("");
-            sound.Play("game.mp3");*/
+            Parametrs settings = new Parametrs();
+            Sounds sound = new Sounds(settings.GetResourceFolder());
+            sound.Play("game.mp3");
+            Sounds soundeat = new Sounds(settings.GetResourceFolder());
             while (true)
             {
                 if (snake.Eat(food))
@@ -41,7 +42,7 @@ namespace Zmeika_Csharp
                     //sound.Stop("stardust.mp3");
                     if (score.ScoreUp())
                     {
-                        score.speed -= 10;
+                        score.speed -= 20;
                     }
                 }
                 else
