@@ -21,10 +21,10 @@ namespace Zmeika_Csharp
             Console.WriteLine("________________");
             Console.SetCursorPosition(50, 13);
             Console.WriteLine("Stop game - Q");
-            Console.SetCursorPosition(49, 14);
+            /*Console.SetCursorPosition(49, 14);
             Console.WriteLine("________________");
             Console.SetCursorPosition(50, 16);
-            Console.WriteLine("Sounds=0% - A");
+            Console.WriteLine("Sounds=0% - A");*/
             key = Console.ReadKey(true);
             if (key.Key == ConsoleKey.S)
             {

@@ -22,7 +22,7 @@ namespace Zmeika_Csharp
             snake.Draw();
 
             FoodCreator foodCreator = new FoodCreator(80, 25, '@', ConsoleColor.Green);
-            Stenka stenka = new Stenka(80, 25, '+', ConsoleColor.White);
+            Stenka stenka = new Stenka(80, 25, '@', ConsoleColor.Green);
             Point food = foodCreator.CreateFood();
             Point stenk = stenka.CreateStenka();
             food.Draw();
@@ -62,6 +62,7 @@ namespace Zmeika_Csharp
                     snake.HandleKey(key.Key);
                 }
             }
+            WriteGameOver();
         }
 
         static void Main(string[] args)
@@ -80,6 +81,22 @@ namespace Zmeika_Csharp
 
             Console.ReadLine();
 
+        }
+        static void WriteGameOver()
+        {
+            int xOffset = 25;
+            int yOffset = 8;
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.SetCursorPosition(xOffset, yOffset++);
+            WriteText("=========", xOffset, yOffset++);
+            WriteText("Game Over", xOffset + 1, yOffset++);
+            WriteText("=========", xOffset, yOffset++);
+        }
+
+        static void WriteText(String text, int xOffset, int yOffset)
+        {
+            Console.SetCursorPosition(xOffset, yOffset);
+            Console.WriteLine(text);
         }
 
 
